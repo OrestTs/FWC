@@ -1,0 +1,74 @@
+.Dropdown
+  position: absolute
+  top: 0
+  left: 0
+  display: block
+  margin: 15px
+  padding: 5px
+  background: $white
+  &__input-wrapper
+    position: relative
+    &--opened
+      .Dropdown__icon
+        &:before
+          content: ''
+          transform: rotate(-135deg)  translate(-2px, -2px)
+      .Dropdown__input
+        &:hover
+          background: $white
+        &::placeholder
+          color:  rgba($darkGrey, 0.3)
+  &__icon
+    pointer-events: none
+    position: absolute
+    right: 0
+    top: 0
+    width: 40px
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    background: $darkGrey
+    &:before
+      content: ''
+      transform: rotate(45deg)  translate(-2px, -2px)
+      border: solid $white
+      border-width: 0 2px 2px 0
+      display: inline-block
+      padding: 4px
+  &__input
+    display: block
+    padding: 10px 50px 10px 10px
+    min-width: 250px
+    max-width: 250px
+    background: $white
+    color: $darkGrey
+    border: 1px solid $darkGrey
+    border-radius: 0
+    font-size: .8em
+    font-weight: 700
+    cursor: pointer
+    outline: none
+    &::placeholder
+      color: $darkGrey
+    &:hover
+      background: $lightGrey
+  &__content
+    background-color: $white
+    min-width: 250px
+    max-width: 250px
+    border: 1px solid  $darkGrey
+    margin-top: 5px
+  &__item
+    color: black
+    font-size: .7em
+    line-height: 1em
+    padding: 10px
+    text-decoration: none
+    display: block
+    cursor: pointer
+    &:hover
+      background-color: $lightGrey
+  &:hover .Dropdown__content
+    display: block
+
